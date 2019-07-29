@@ -1,0 +1,49 @@
+CREATE TABLE [dbo].[canreq] (
+    [pid]   INT          NOT NULL,
+    [pname] VARCHAR (50) NOT NULL,
+    CONSTRAINT [PK_canreq] PRIMARY KEY CLUSTERED ([pid] ASC)
+);
+CREATE TABLE [dbo].[Fares] (
+    [Flightname]     VARCHAR (50) NULL,
+    [flightid]       INT          NOT NULL,
+    [Fromstation]    VARCHAR (50) NULL,
+    [Tostation]      VARCHAR (50) NULL,
+    [firstclass]     MONEY        NULL,
+    [Bussinessclass] MONEY        NULL,
+    [economicclass]  MONEY        NULL,
+    [dateandtimings] VARCHAR (50) NULL,
+    CONSTRAINT [PK_Fares] PRIMARY KEY CLUSTERED ([flightid] ASC)
+);
+
+CREATE TABLE [dbo].[Plist] (
+    [Pid]            INT          NULL,
+    [passengername]  VARCHAR (50) NULL,
+    [flightid]       INT          NULL,
+    [Flightname]     VARCHAR (50) NULL,
+    [Fromstation]    VARCHAR (50) NULL,
+    [Tostation]      VARCHAR (50) NULL,
+    [category]       VARCHAR (50) NULL,
+    [Dateandtimings] VARCHAR (50) NULL
+);
+CREATE TABLE [dbo].[Reg] (
+    [Name]     VARCHAR (50)  NULL,
+    [Address]  NVARCHAR (50) NULL,
+    [Emailid]  VARCHAR (50)  NULL,
+    [username] VARCHAR (50)  NOT NULL,
+    [password] VARCHAR (50)  NULL,
+    [Type]     VARCHAR (50)  NULL,
+    CONSTRAINT [PK_Reg] PRIMARY KEY CLUSTERED ([username] ASC)
+);
+CREATE TABLE [dbo].[schedule] (
+    [flightid]       INT          NOT NULL,
+    [Flightname]     VARCHAR (50) NOT NULL,
+    [Fromstation]    VARCHAR (50) NOT NULL,
+    [Tostation]      VARCHAR (50) NOT NULL,
+    [Firstclass]     INT          NOT NULL,
+    [Bussinessclass] INT          NOT NULL,
+    [economicclass]  INT          NOT NULL,
+    [dateandtimings] VARCHAR (50) NOT NULL,
+    CONSTRAINT [PK_schedule] PRIMARY KEY CLUSTERED ([flightid] ASC)
+);
+
+
